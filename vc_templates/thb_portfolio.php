@@ -188,7 +188,7 @@
 			$id = get_the_ID();
 			$image_id = get_post_thumbnail_id();
 			$image_link = wp_get_attachment_image_src($image_id,'full');
-			$image = aq_resize( $image_link[0], 500, 500, true, false);
+			$image = aq_resize( $image_link[0], 1000, 500, true, false);
 			$image_title = esc_attr( get_the_title($id) );
 			?>
 
