@@ -1,0 +1,377 @@
+#comments {
+	width: 100%;
+	border: 10px solid #f9f9f9;
+	
+	#add_review_button,
+	#submit {
+		width: auto;
+		margin: 0;
+	}
+	#comment-title {
+		font-size: 24px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.5em;
+		text-align: center;
+		margin: 0 0 20px;
+		
+		& + .text-center a{
+			display: block;
+			color: $color1;
+			font-weight: 600;
+			text-decoration: underline;
+			letter-spacing: -0.07em;
+			margin-bottom: 60px;
+			@extend .mont;
+		}
+	}
+	.headline {
+		height: 30px;
+		text-align: left;
+		margin-bottom: 10px;
+		h2 {
+			padding: 0;
+		}
+		a {
+			text-transform: uppercase;
+			float: right;
+			margin-top: 2px;
+			font-size: 12px;
+		}
+	}
+	.commentlist_container {
+		background: #fff;
+		padding: 55px 0;
+	}
+	#reply-title {
+		text-align: center;
+		font-size: 14px;
+		color: $color1;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.6em;
+		margin: 0 0 50px;
+		small {
+			
+			font-weight: 500;
+			color: $color3;
+			font-size: 12px;
+			line-height: 19px;
+			letter-spacing: normal;
+			@media only screen and (min-width: $break-small) {
+				float: right;
+			}
+		}
+	}
+	.comment-notes {
+		margin-bottom: 20px;
+	}
+	
+	ol.commentlist {
+		list-style: none;
+		width: 100%;
+		float: left;
+		margin: 0;
+		display: block;
+		float: left;
+		width: 100%;
+		li {
+			width: 100%;
+			float: left;
+			margin-bottom: 35px;
+			
+			&:before {
+				display: none;	
+			}
+			li {
+				&:last-child {
+					padding-bottom: 0;
+					margin-bottom: 0;
+				}
+			}
+			
+			#respond {
+				float: left;
+				width: 100%;
+				margin-top: 20px;
+				display: block !important;
+				#reply-title {
+					display: block;
+					@media only screen and (min-width: $break-small) {
+						text-align: left;
+					}
+					
+				}
+			}
+		}
+		&>li {
+			&:first-child {
+				.comment-inner {
+					margin-top:0;
+				}
+			}
+			&:last-child {
+				border: 0;
+				margin-bottom: 0;
+			}
+		}
+		
+		.vcard {
+			float: left;
+			width: 75px;
+			height: 75px;
+			margin: 0 15px 0 0;
+			padding: 0;
+			border: 0;
+			
+			@media only screen and (min-width: $break-small) {
+				margin: 0 30px 0 0;
+				width: 130px;
+				height: 130px;
+			}
+			.avatar {
+				float: left;
+				width: 130px;
+			}
+			
+			.rtl & {
+				float: right;
+				margin: 0 0 0 15px;
+				
+				@media only screen and (min-width: $break-small) {
+					margin: 0 0 0 30px;
+				}
+			}
+		}
+		.commentmeta {
+			line-height: 1;
+			strong {
+				display: block;
+				color: $color1;
+				font-weight: 500;
+				line-height: 1;
+				font-size: 14px;
+				margin-bottom: 5px;
+			}
+			
+		}
+		.authorname {
+			display: block;
+			float: left;
+			font-size: 14px;
+			text-transform: uppercase;
+			font-weight: 300;
+			margin-bottom: 15px;
+			color: #868686;
+			letter-spacing: 0.1em;
+		}
+		.awaiting_moderation {
+			display: block;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			color: #fff;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 8px;
+			padding: 2px 4px;
+			font-style: normal;
+		}
+		.comment-inner {
+			width: 100%;
+			float: left;
+			position: relative;
+		}
+		.comment-reply-link {
+			display: inline-block;
+			float: left;
+			color: $color1;
+			font-weight: 600;
+			font-size: 13px;
+			text-transform: uppercase;
+			
+			.rtl & {
+				float: right;	
+			}
+		}
+		.comment-container{
+			width: auto;
+			margin-left: 90px;
+			
+			@media only screen and (min-width: $break-small) {
+				margin-left: 160px;
+			}
+			.rtl & {
+				margin-right: 90px;
+				margin-left: 0;
+				
+				@media only screen and (min-width: $break-small) {
+					margin-right: 160px;
+				}
+			}
+			.star-rating {
+				float: right;
+				
+				@media only screen and (max-width: $break-small) {
+					float: left;
+					width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.comment-text{
+			width: 100%;
+			float: left;
+			position: relative;
+			margin-bottom: 15px;
+			
+			p {
+				font-size: 14px;
+			}
+		}
+		.children{
+			display: block;
+			float: left;
+			width: 100%;
+			margin: 30px 0 0;
+			padding: 15px;
+			list-style: none;
+			position: relative;
+			background: #fafafa;
+			
+			@media only screen and (min-width: $break-small) {
+				padding: 30px 30px 30px 100px;
+			}
+			@media only screen and (min-width: $break-medium) {
+				padding: 30px 30px 30px 130px;
+			}
+			@media only screen and (min-width: $break-large) {
+				padding: 30px 30px 30px 160px;
+			}
+			.rtl & {
+				padding: 15px;
+				
+				@media only screen and (min-width: $break-small) {
+					padding: 30px 100px 30px 30px;
+				}
+				@media only screen and (min-width: $break-medium) {
+					padding: 30px 130px 30px 30px;
+				}
+				@media only screen and (min-width: $break-large) {
+					padding: 30px 160px 30px 30px;
+				}
+			}
+			.vcard {
+				float: left;
+				width: 60px;
+				height: 60px;
+				.avatar {
+					float: left;
+					width: 60px;
+				}
+				@media only screen and (min-width: $break-small) {
+					width: 90px;
+					height: 90px;
+					
+					.avatar {
+						width: 90px;
+					}
+				}
+				.rtl & {
+					float: right;
+				}
+			}
+			.comment-container {
+				margin-left: 75px;
+				
+				@media only screen and (min-width: $break-small) {
+					margin-left: 120px;
+				}
+				.rtl & {
+					margin-right: 75px;
+					margin-left: 0;
+					
+					@media only screen and (min-width: $break-small) {
+						margin-right: 120px;
+					}
+				}
+			}
+			&>li {
+				
+				&:first-child {
+					&>.comment-inner {
+						margin-top:0;
+					}
+				}
+				&:last-child {
+					border: 0;
+				}
+			}
+			.children {
+				padding-left: 72px;
+				
+				.rtl & {
+					padding: 0 72px 0 0;
+				}
+			}
+		}
+	}
+}
+#respond {
+	clear: left;
+	padding: 65px 0;
+	textarea {
+		width: 100%;	
+	}
+	.form-submit {
+		margin: 0;
+		text-align: center;
+	}
+	.comment-form {
+		input[type="text"] {
+			width: 100%;	
+		}
+	}
+}
+#reviews {
+	float: left;
+	width: 100%;
+	#comments {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		ol.commentlist {
+			padding: 0;
+			
+			.comment-container {
+				margin-left: 0;
+				
+				.authorname {
+					display: none;
+				}
+				.commentmeta strong {
+					float: left;
+				}
+			}
+			.comment-text {
+				text-align: left;
+			}
+		}
+	}
+	.comment-reply-title {
+		display: none;
+	}	
+}
+#comment_popup {
+	background: #fff;
+	padding: 50px;
+	max-width: 50%;
+	position: relative;
+	margin: 0 auto;
+	@media only screen and (max-width: $break-medium) {
+		max-width: 100%;
+	}
+	@media only screen and (max-width: $break-small) {
+		padding: 30px;
+	}
+}

@@ -1,0 +1,324 @@
+.thb-portfolio {
+	margin: 0;
+	overflow: hidden;
+	@extend .endcolumn;
+	&.row {
+		margin: 0;
+	}
+	.carousel.owl {
+		margin: 0 !important;
+	}
+	.columns {
+		padding: 0
+	}
+}
+.post_categories {
+	text-transform: uppercase;
+	font-size: 14px;
+	color: $color1;
+	letter-spacing: 0.075em;
+}
+.post .post-content .filters {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	text-align: center;
+	list-style: none;
+	margin: 0;
+	@include translateY(-100%);
+	&.active {
+		width: 100%;
+		background: rgba(0,0,0,0.9);
+		li {
+			display: inline-block;
+			
+			@media only screen and (max-width: $break-small) {
+				display: block;
+			}
+		}
+		
+		@media only screen and (max-width: $break-small) {
+			.thb-toggle {
+				display: none;
+			}
+		}
+	}
+	.thb-toggle {
+		display: block;
+		float: left;
+		background: rgba(0,0,0,0.2);
+		padding: 0 15px;
+		cursor: pointer;
+		@include translateY(100%);
+		@include single-transition('none');
+		h6 {
+			color: #fff;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 42px;
+			text-transform: uppercase;
+			margin: 0;
+			letter-spacing: -0.05em;
+		}
+		&:hover {
+			background: $color1;	
+		}
+	}
+	li {
+		display: none;
+		margin: 0;
+		position: relative;
+		h6 {
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 42px;
+			text-transform: uppercase;
+			margin: 0;
+			letter-spacing: -0.05em;
+			a {
+				color: #9e9e9e;
+				
+				&:hover {
+					color: $color3;
+				}
+				&.active {
+					color: $color3;
+				}
+			}
+		}
+		
+		& + li {
+			padding-left: 40px;
+			
+			&:after {
+				display: block;
+				content: '';
+				width: 1px;
+				height: 8px;
+				position: absolute;
+				top: 17px;
+				left: 19px;
+				background: rgba(255,255,255,0.2);
+			}
+			@media only screen and (max-width: $break-small) {
+				padding-left: 0;
+				text-align: center;
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}
+.portfolio-text-style {
+	display: block;
+	padding: 25px 10px 25px 40px;
+	color: $color1;
+	position: relative;
+	font-size: 30px;
+	overflow: hidden;
+	font-weight: 600;
+	@include single-transition(none);
+	
+	@media only screen and (min-width: $break-small) {
+		font-size: 30px;
+		display: inline-block;
+	}
+	@media only screen and (min-width: $break-medium) {
+		font-size: 40px;
+	}
+	@media only screen and (min-width: $break-large) {
+		font-size: 80px;
+	}
+	
+	
+	span {
+		position: absolute;
+		top: 33px;
+		left: 27px;
+		font-size: 14px;
+		@include rotateZ(-90deg);
+	}
+	figure {
+		position: absolute;
+		top:0;
+		left:0;
+		right: 0;
+		display: none;
+		margin: -250px 0 0 -250px;
+		img {
+			width: 100%;	
+		}
+	}
+	&:hover figure {
+		display: block;
+	}
+}
+.text-style-container {
+	width: 100%;
+	overflow-x: hidden;
+}
+.post .post-content .portfolio-text-style-2 {
+	display: block;
+	width: 100%;
+	padding: 20px 25px;
+	background: $color1;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	@include single-transition(none);
+	&:hover {
+		background: $color3;
+		border-color: $color3;
+		span {
+			color: #fff;	
+		}
+	}
+	@media only screen and (min-width: $break-medium) {
+		padding: 35px 50px;
+	}
+	@media only screen and (min-width: $break-large) {
+		padding: 45px 60px;
+	}
+	@media only screen and (min-width: $break-xlarge) {
+		padding: 55px 70px;
+	}
+	h1 {
+		color: #fff;
+		font-weight: 600;
+		line-height: 1;
+		font-size: 30px;
+		margin: 0 0 15px;
+		letter-spacing: -0.05em;
+		@media only screen and (min-width: $break-medium) {
+			font-size: 40px;
+		}
+		@media only screen and (min-width: $break-large) {
+			font-size: 60px;
+		}
+		@media only screen and (min-width: $break-xlarge) {
+			font-size: 80px;
+		}
+	}
+	span {
+		color: #a3a3a3;
+		font-size: 14px;
+		font-weight: 400;	
+		text-transform: uppercase;
+		margin-left: 1px;
+		
+		@media only screen and (min-width: $break-medium) {
+			margin-left: 2px;
+		}
+		@media only screen and (min-width: $break-large) {
+			margin-left: 4px;
+		}
+		@media only screen and (min-width: $break-xlarge) {
+			margin-left: 5px;
+		}
+	}
+}
+.portfolio_nav {
+	a {
+		display: block;
+		min-height: 200px;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		background: #313131;
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -100px 0 0 -300px;
+			max-width: none;
+		}
+		.overlay {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top:0;
+			left:0;
+			background: rgba($color2, 0.8);
+		}
+		.text {
+			position: absolute;
+			bottom:0;
+			padding: 30px;
+			color: #fff;
+			
+			span {
+				display: block;
+			}
+			.dir {
+				font-size: 12px;
+				font-weight: 400;
+			}
+			.hr {
+				width: 18px;
+				height: 1px;
+				background: rgba(255,255,255,0.4);
+				margin: 10px 0;
+			}
+			.title {
+				font-size: 16px;
+				font-weight: 600;
+			}
+		}
+		
+		&.prev {
+			div {
+				text-align: left;
+				left: 0;
+			}
+		}
+		&.next {
+			div {
+				direction: rtl;
+				text-align: right;
+				right: 0;
+			}
+		}
+		&.gotoportfolio {
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: #292929;
+			padding: 120px 30px 30px;
+			color: #fff;
+			font-size: 14px;
+			font-weight: 600;
+			text-align: center;
+			position: relative;
+			
+			&:after {
+				content: '';
+				display: block;
+				width: 34px;
+				height: 34px;
+				background: url('../img/back-to-portfolio.png');
+				@include background-size(34px 34px);
+				
+				position: absolute;
+				top: 60px;
+				left: 50%;
+				margin: 0 0 0 -17px;
+				opacity: 0.7;
+			}
+		}
+	}
+}
+
+.masonry_btn {
+	display: block;
+	text-align: center;
+	height: 80px;
+	line-height: 80px;
+	font-size: 14px;
+	font-weight: 300;
+	color: #868686;
+	text-transform: uppercase;
+	&:hover {
+		color: $color1;	
+	}
+}

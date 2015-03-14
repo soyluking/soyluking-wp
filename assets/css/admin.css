@@ -1,0 +1,17 @@
+.vc-license-activation-notice,
+.yith_banner,
+#icl_div .icl_cyan_box,
+.rs-update-notice-wrap {
+	display: none !important;
+}
+.thb_menu_options {
+	float: left;
+	width: 100%;
+}
+.thb_menu_options h2 {
+	font-size: 16px;
+}
+.thb_menu_options h3 {
+	font-size: 12px;
+	text-transform: uppercase;
+}
