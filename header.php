@@ -110,7 +110,7 @@
 			<div class="small-7 medium-4 columns logo">
 				<?php if ($header_style == 'style1') { ?>
 					<a href="<?php echo home_url(); ?>" class="logolink">
-						<img src="<?php echo $logo; ?>" class="logoimg" alt="<?php bloginfo('name'); ?>"/>
+						Hola, Soy Luigi Pizarro
 					</a>
 				<?php } ?>
 			</div>
