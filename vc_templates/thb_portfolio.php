@@ -191,10 +191,23 @@
 			$image = aq_resize( $image_link[0], 1000, 500, true, false);
 			$image_title = esc_attr( get_the_title($id) );
 			?>
-
-				<a href="<?php the_permalink(); ?>" class="portfolio-text-style" style="color: <?php echo $a['color']; ?>;">
+         <?php
+            if ( $i === 1 )      { $color_work =   '#40BFBF'; }
+            elseif ( $i === 2 )  { $color_work =   '#409FBF'; }
+            elseif ( $i === 3 )  { $color_work =   '#407FBF'; }
+            elseif ( $i === 4 )  { $color_work =   '#4060BF'; }
+            elseif ( $i === 5 )  { $color_work =   '#4040BF'; }
+            elseif ( $i === 6 )  { $color_work =   '#6040BF'; }
+            elseif ( $i === 7 )  { $color_work =   '#7F40BF'; }
+            elseif ( $i === 8 )  { $color_work =   '#9F40BF'; }
+            elseif ( $i === 9 )  { $color_work =   '#BF40BF'; }
+            elseif ( $i === 10 ) { $color_work =   '#BF409F'; }
+            elseif ( $i === 11 ) { $color_work =   '#BF4080'; }
+            elseif ( $i === 12 ) { $color_work =   '#BF4060'; }
+         ?>
+				<a href="<?php the_permalink(); ?>" class="portfolio-text-style" style="color: <?php echo $color_work; ?>;">
 					<?php the_title(); ?>
-					<span><?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?></span>
+					<span style="left:20px;top:37px"><?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?></span>
 					<figure>
 						<img src="<?php echo $image[0]; ?>" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" alt="<?php echo $image_title; ?>" />
 					</figure>
