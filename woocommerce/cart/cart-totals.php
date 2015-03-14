@@ -4,11 +4,13 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.3.0
+ * @version     2.3.6
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit;
 }
+
 ?>
 <div class="cart_totals <?php if ( WC()->customer->has_calculated_shipping() ) echo 'calculated_shipping'; ?>">
 
@@ -22,20 +24,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<th colspan="3"><?php _e( 'Cart Subtotal',THB_THEME_NAME ); ?></th>
 			<td><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
-
+		
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
 			<tr class="cart-discount coupon-<?php echo esc_attr( $code ); ?>">
 				<th colspan="3"><?php wc_cart_totals_coupon_label( $coupon ); ?></th>
 				<td><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
 			</tr>
 		<?php endforeach; ?>
+		
 		<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
-
+		
 			<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
 
 			<?php wc_cart_totals_shipping_html(); ?>
 
 			<?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
+
+		<?php elseif ( WC()->cart->needs_shipping() ) : ?>
+
+			<tr class="shipping">
+				<th colspan="3"><?php _e( 'Shipping', 'woocommerce' ); ?></th>
+				<td><?php woocommerce_shipping_calculator(); ?></td>
+			</tr>
 
 		<?php endif; ?>
 
@@ -81,6 +91,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			printf( __( 'Note: Shipping and taxes are estimated%s and will be updated during checkout based on your billing and shipping information.', THB_THEME_NAME ), $estimated_text );
 		?></small></p>
 	<?php endif; ?>
+	
+	<div class="wc-proceed-to-checkout">
+	
+		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+
+	</div>
 		
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 </div>

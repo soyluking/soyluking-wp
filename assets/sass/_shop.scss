@@ -976,16 +976,19 @@
 			}
 		}
 	}
-	.notification-box {
-		margin-bottom: 30px;
-		@media only screen and (min-width: $break-medium) {
-			margin-bottom: 60px;
+}
+.cart_coupon {
+	margin-top: 50px;
+	.actions {
+		padding-left: 0;
+		
+		& + div {
+			vertical-align: top;
 		}
 	}
 }
 .coupon_box {
 	&.notification-box.woo {
-		margin-bottom: 30px;
 		.content {
 			padding: 30px;
 			#coupon_code {

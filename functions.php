@@ -10,7 +10,7 @@
 
 // Define Theme Name for localization
 if (!defined('THB_THEME_NAME')) {
-	define('THB_THEME_NAME', 'soyluking');
+	define('THB_THEME_NAME', 'notio');
 	define('THB_THEME_ROOT', esc_url(get_template_directory_uri()));
 	define('THB_THEME_ROOT_ABS', get_template_directory());
 }
@@ -83,7 +83,7 @@ require_once('inc/customloginlogo.php');
 // Post Types
 require_once('inc/posttypes.php');
 
-// Misc
+// Misc 
 require_once('inc/misc.php');
 
 // WPML Support
@@ -107,7 +107,7 @@ add_theme_support( 'html5', array( 'caption' ) );
 add_filter( 'use_default_gallery_style', '__return_false' );
 
 // Shortcode Generator & Shortcodes (+)
-require_once('inc/tinymce/tinymce-class.php');
+require_once('inc/tinymce/tinymce-class.php');	
 require_once('inc/tinymce/shortcode-processing.php');
 
 // WordPress Importer

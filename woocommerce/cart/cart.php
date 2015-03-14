@@ -20,6 +20,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<div class="largetitle"><?php _e('YOUR SHOPPING BAG', THB_THEME_NAME); ?>
 				<a href="<?php echo apply_filters( 'woocommerce_return_to_shop_redirect', get_permalink( wc_get_page_id( 'shop' ) ) ); ?>">&larr; <?php _e( 'Continue Shopping',THB_THEME_NAME ); ?></a>
 			</div>
+			<form action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">
 			<?php do_action( 'woocommerce_before_cart_table' ); ?>
 			<table class="shopping_bag cart" cellspacing="0">
 				<thead>
@@ -110,34 +111,37 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 				</tbody>
 			</table>
-				
+			<div class="cart_coupon">
+				<div class="small-12 medium-6 columns actions">
+	
+					<?php if ( WC()->cart->coupons_enabled() ) { ?>
+						<aside class="notification-box woo coupon_box" role="alert">
+							<div class="content">
+								<input type="text" name="coupon_code" id="coupon_code" value="" class="full" placeholder="<?php _e( 'Enter Coupon Code', THB_THEME_NAME ); ?>"/>
+								<input type="submit" class="apply_coupon" name="apply_coupon" value="<?php _e( 'Apply',THB_THEME_NAME ); ?>" />
+								<?php do_action('woocommerce_cart_coupon'); ?>
+							</div>
+						</aside>
+					<?php } ?>
+	
+					
+				</div>
+				<div class="small-12 medium-6 columns">
+					<input type="submit" class="update-button button large" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
+					
+					<?php do_action( 'woocommerce_cart_actions' ); ?>
+	
+					<?php wp_nonce_field( 'woocommerce-cart' ); ?>
+				</div>
+			</div>
 			<?php do_action( 'woocommerce_after_cart_table' ); ?>
-			
+			</form>
 		</div>
 		
 	</div>
 	<div class="small-12 large-4 columns cart-collaterals">
-		<form action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post" data-equal=">.equal">
-		
-			<?php wp_nonce_field( 'woocommerce-cart' ); ?>
-			<?php woocommerce_cart_totals(); ?>
-			<?php do_action('woocommerce_cart_collaterals'); ?>
-			
-			<?php if ( WC()->cart->coupons_enabled() ) { ?>
-				<aside class="notification-box woo coupon_box" role="alert">
-					<div class="content">
-						<input type="text" name="coupon_code" id="coupon_code" value="" class="full" placeholder="<?php _e( 'Enter Coupon Code', THB_THEME_NAME ); ?>"/>
-						<input type="submit" class="apply_coupon" name="apply_coupon" value="<?php _e( 'Apply',THB_THEME_NAME ); ?>" />
-						<?php do_action('woocommerce_cart_coupon'); ?>
-					</div>
-				</aside>
-			<?php } ?>
-			
-			<input type="submit" class="update-button button large" name="update_cart" value="<?php _e( 'Update',THB_THEME_NAME ); ?>" />
-			<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
-			<?php wp_nonce_field( 'woocommerce-cart' ); ?>
-		</form>
-		<?php woocommerce_shipping_calculator(); ?>
+		<?php woocommerce_cart_totals(); ?>
+		<?php do_action('woocommerce_cart_collaterals'); ?>
 	</div>
 </div>
 <?php do_action( 'woocommerce_after_cart' ); ?>

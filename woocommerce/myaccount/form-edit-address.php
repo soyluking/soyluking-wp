@@ -25,7 +25,7 @@ get_currentuserinfo();
 				echo get_avatar( $user_id, 100 );
 			?>
 			
-			<span class="user-name">Welcome, <?php echo $current_user->display_name; ?></span>
+			<span class="user-name"><?php _e( 'Welcome,', THB_THEME_NAME ); ?> <?php echo $current_user->display_name; ?></span>
 			<p><?php _e( 'You can manage your orders and edit your account here.', THB_THEME_NAME ); ?></p>
 		</div>
 		<ul id="my-account-nav">

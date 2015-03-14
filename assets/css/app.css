@@ -6641,18 +6641,17 @@ Shop
     float: right;
   }
 }
-.cart_table .notification-box {
-  margin-bottom: 30px;
+
+.cart_coupon {
+  margin-top: 50px;
 }
-@media only screen and (min-width: 64.063em) {
-  .cart_table .notification-box {
-    margin-bottom: 60px;
-  }
+.cart_coupon .actions {
+  padding-left: 0;
+}
+.cart_coupon .actions + div {
+  vertical-align: top;
 }
 
-.coupon_box.notification-box.woo {
-  margin-bottom: 30px;
-}
 .coupon_box.notification-box.woo .content {
   padding: 30px;
 }
@@ -8229,20 +8228,16 @@ input[type=submit].grey:hover {
   background: #484848;
   border-color: #484848;
 }
-.btn.accent, .btn.alt,
+.btn.accent,
 .button.accent,
-.button.alt,
-input[type=submit].accent,
-input[type=submit].alt {
+input[type=submit].accent {
   background: #1aa97f;
   color: #fff;
   border-color: #1aa97f;
 }
-.no-touch .btn.accent:hover, .no-touch .btn.alt:hover, .no-touch
+.no-touch .btn.accent:hover, .no-touch
 .button.accent:hover, .no-touch
-.button.alt:hover, .no-touch
-input[type=submit].accent:hover, .no-touch
-input[type=submit].alt:hover {
+input[type=submit].accent:hover {
   background: #179872;
   border-color: #179872;
 }
